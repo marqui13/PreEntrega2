@@ -1,26 +1,34 @@
 import NavBar from "../components/NavBar";
-import productos from "../data/posts";
 import styles from "../App.module.css";
 import Card from "../components/Card";
+import { obtenerProductos } from "../firebase/firebase";
+import { useState, useEffect } from "react";
 
 export default function Audifonos() {
-  let audifonos = productos.filter(
-    (element) => element.category == "audifonos"
-  );
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    obtenerProductos().then((res) => {
+      res = res.filter((element) => element.categoria == "audifonos");
+      setProductos(res);
+    });
+  }, []);
   return (
     <div>
       <NavBar />
       <main className={styles.section}>
         <section className={styles.container}>
           <div className={styles.layout}>
-            {audifonos.map((element, index) => (
-              <Card
-                key={element.id}
-                title={element.title}
-                likes={element.likes}
-                order={element.id}
-                image={element.image}
-              />
+            {productos.map((element, index) => (
+              <div>
+                <Card
+                  key={element.id}
+                  title={element.nombre}
+                  likes={element.likes}
+                  order={element.id}
+                  image={element.imagen}
+                />
+              </div>
             ))}
           </div>
         </section>

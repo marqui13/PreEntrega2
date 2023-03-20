@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import CartWidget from "./cartWidget";
+import { useContext, useState } from "react";
+import { CartContext } from "../CartContext";
 
 export default function NavBar() {
   return (
@@ -36,7 +38,6 @@ export default function NavBar() {
         <Link to={"/drones"}>
           <div>Drones</div>
         </Link>
-        <button className="bg-primary text-white p-1 rounded-full"></button>
       </div>
 
       {/* Componente Carrito */}

@@ -1,6 +1,5 @@
 import NavBar from "../components/NavBar";
 import { useParams } from "react-router-dom";
-import productos from "../data/posts";
 import styles from "../App.module.css";
 import Card from "../components/Card";
 

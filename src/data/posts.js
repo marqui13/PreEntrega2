@@ -1,3 +1,6 @@
+import { obtenerProductos } from "../firebase/firebase";
+
+
 export default [
   {
     id: 1,
@@ -10,11 +13,11 @@ export default [
   },
   {
     id: 2,
-    title: "Drone DJI Mavic Air",
+    nombre: "Drone DJI Mavic Air",
     likes: Math.floor(Math.random() * (50 - 0) + 0),
-    description: "El mejor drone del mercado",
-    category: "drones",
-    image:
+    descripcion: "El mejor drone del mercado",
+    categoria: "drones",
+    imagen:
       "https://http2.mlstatic.com/D_NQ_NP_2X_898637-MLA46233140017_062021-F.webp",
   },
   {
