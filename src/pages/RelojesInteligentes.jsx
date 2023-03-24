@@ -21,13 +21,13 @@ export default function Audifonos() {
           <div className={styles.layout}>
             {productos.map((element, index) => (
               <div>
-                <Card
-                  key={element.id}
-                  title={element.nombre}
-                  likes={element.likes}
-                  order={element.id}
-                  image={element.imagen}
-                />
+ <Card
+                    key={element.id}
+                    title={element.nombre}
+                    likes={element.likes}
+                    order={index+1}
+                    image={element.imagen}
+                  />
               </div>
             ))}
           </div>

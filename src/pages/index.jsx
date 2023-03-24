@@ -39,12 +39,13 @@ export default function Index() {
                     key={element.id}
                     title={element.nombre}
                     likes={element.likes}
-                    order={element.id}
+                    order={index+1}
                     image={element.imagen}
                   />
                 </Link>
+                <input type="number" name="" id="" min="0" value="0" />
                 <button onClick={() => agregarCarrito(element.id)}>
-                  Detalle Producto
+                  Agregar a carrito
                 </button>
               </div>
             ))}
